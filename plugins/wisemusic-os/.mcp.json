@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "wisemusic-os": {
+      "type": "http",
+      "url": "https://mcp.wisemusic.vono.studio/mcp"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "wisemusic",
+  "owner": {
+    "name": "Wisemusic"
+  },
+  "metadata": {
+    "description": "Wisemusic OS: the company connector and skills for Claude"
+  },
+  "plugins": [
+    {
+      "name": "wisemusic-os",
+      "source": "./plugins/wisemusic-os",
+      "description": "Firemní konektor Wisemusic (Company OS) a dovednosti týmu: zeptejte se, co se děje s čímkoli ve firmě Wisemusic, se zdroji, a navrhujte změny, které schválí člověk."
+    }
+  ]
+}
