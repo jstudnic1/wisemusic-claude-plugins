@@ -41,8 +41,9 @@ proof (kit/12, the two-week verification).
    an id only to correct the same record.
 4. **Propose it:** `propose_action` `log_pilot_observation` with {observation_id, workflow, method,
    work_min, verify_min, fix_min, support_min, usable, critical_error, handoff, task_ref,
-   observed_on, note}. Read the preview back to the person. They approve it themselves in the
-   approval portal with one tap. Check with `action_status`: recorded only when it shows executed.
+   observed_on, note}. Read the preview back to the person and ask "Potvrdit?"; on their explicit
+   yes, `decide_action` approves it (they confirm their own record). Check with `action_status`:
+   recorded only when it shows executed.
 5. **How it is going:** `query_metric` `pilot_minutes_by_workflow` with date_from and date_to (read the
    second assisted week on its own: the first includes learning the tool). Per workflow and method it
    returns observations, median total minutes, share usable, critical errors, hand-offs and, for

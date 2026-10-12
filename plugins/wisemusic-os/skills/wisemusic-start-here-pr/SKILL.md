@@ -65,9 +65,13 @@ média za víkend?").
 
 ## How approvals work for you
 
+- You decide here in Claude, never in a portal: Claude shows the preview and asks "Potvrdit?"; your
+  explicit "ano" approves it (`decide_action`), "ne" rejects it. "Co čeká na mé schválení?" lists
+  what others proposed for you to decide (`my_approvals`).
 - You propose and approve `propose_action` `upsert_campaign` and `propose_action`
   `set_campaign_status`, yours included.
-- A budget (`propose_action` `set_campaign_budget`) waits for an owner.
+- A budget (`propose_action` `set_campaign_budget`) waits for an owner to confirm in their own
+  Claude.
 - Media outlets: `propose_action` `upsert_organization` with kind media.
 - A change is done only when `action_status` shows executed.
 

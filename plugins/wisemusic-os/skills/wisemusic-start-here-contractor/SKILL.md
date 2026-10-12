@@ -55,8 +55,9 @@ them, or pass on anything from one act's work to another.
 
 ## How changes are made
 
-- You may record your own measurement with `propose_action` `log_pilot_observation` and approve it
-  yourself.
+- You may record your own measurement with `propose_action` `log_pilot_observation` and confirm it
+  yourself here in Claude: Claude shows the preview and asks "Potvrdit?"; your "ano" records it
+  (`decide_action`).
 - Shows, releases, campaigns and tasks are changed by Wisemusic's staff: tell the person who brought
   you in.
 - A change is done only when `action_status` shows executed.

@@ -64,11 +64,14 @@ sorts your inbox with your own mail connector in Claude ("Co mi za víkend napsa
 
 ## How approvals work for you
 
+- You decide here in Claude, never in a portal: Claude shows the preview and asks "Potvrdit?"; your
+  explicit "ano" approves it (`decide_action`), "ne" rejects it. "Co čeká na mé schválení?" lists
+  what others proposed for you to decide (`my_approvals`).
 - You propose and approve `propose_action` `upsert_release`, `propose_action` `set_release_status`
   and `propose_action` `update_release_checklist`, yours included; an owner may too.
 - Campaigns: `propose_action` `upsert_campaign`, `propose_action` `set_campaign_status`; budgets
-  (`propose_action` `set_campaign_budget`) wait for an owner.
-- Merch products you propose are approved by back office or an owner.
+  (`propose_action` `set_campaign_budget`) wait for an owner to confirm in their own Claude.
+- Merch products you propose are approved by back office or an owner, in their own Claude.
 - A change is done only when `action_status` shows executed.
 
 ## Where to get help

@@ -63,11 +63,14 @@ your own mail connector in Claude ("Roztřiď mi poštu a najdi faktury od dodav
 
 ## How approvals work for you
 
+- You decide here in Claude, never in a portal: Claude shows the preview and asks "Potvrdit?"; your
+  explicit "ano" approves it (`decide_action`), "ne" rejects it. "Co čeká na mé schválení?" lists
+  what others proposed for you to decide (`my_approvals`), such as invoices booking recorded.
 - You propose and approve `propose_action` `record_booking_invoice` (invoiced with its dates, paid),
   `propose_action` `set_booking_tech`, `propose_action` `upsert_merch_product`, `propose_action`
   `set_merch_status` and `propose_action` `update_release_checklist`, yours included.
 - You propose `propose_action` `set_booking_status` (contract signed, played) and `propose_action`
-  `set_release_status`; a booker or digital approves.
+  `set_release_status`; a booker or digital approves in their own Claude.
 - A change is done only when `action_status` shows executed.
 
 ## Where to get help

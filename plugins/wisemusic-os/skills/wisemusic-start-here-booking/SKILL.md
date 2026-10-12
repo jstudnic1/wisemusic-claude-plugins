@@ -67,12 +67,15 @@ stylem.").
 
 ## How approvals work for you
 
+- You decide here in Claude, never in a portal: Claude shows the preview and asks "Potvrdit?"; your
+  explicit "ano" approves it (`decide_action`), "ne" rejects it. "Co čeká na mé schválení?" lists
+  what others proposed for you to decide (`my_approvals`).
 - You propose and approve `propose_action` `upsert_booking` (the only action with the fee),
   `propose_action` `set_booking_status` and `propose_action` `set_booking_tech`; another booker or
   an owner may approve, and so may you.
 - Invoices and payments (`propose_action` `record_booking_invoice`) are approved by back office or
-  an owner.
-- Roster changes go to the owners (`propose_action` `upsert_artist`).
+  an owner, in their own Claude.
+- Roster changes go to the owners (`propose_action` `upsert_artist`), in their own Claude.
 - A change is done only when `action_status` shows executed.
 
 ## Where to get help
