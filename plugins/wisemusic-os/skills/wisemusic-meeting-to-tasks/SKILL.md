@@ -38,8 +38,19 @@ never becomes a task.
    exact ids; `search` object_type person for the people (their principal ids). Then
    `query_metric` `open_tasks_by_project` (and `artist_activity` for each act): the open tasks so
    far, from earlier meetings, mails and Todoist itself. A new task must not repeat one of them.
-3. **Build one episode** following the episode schema: `decision` only for what was explicitly
-   agreed (decided_by: the Wisemusic person, or the act or partner by role); `commitment` only with
+   **Already extracted?** A published transcript is usually extracted by the
+   transcript-extraction routine within the hour: its decisions, commitments and questions are
+   then already on the cards. For the acts, shows and releases you found, `sources` with
+   object_type and object_id lists the sources behind their facts; if this transcript's
+   source_id is there with any of `decision.upserted` (a decision is its own object here),
+   `commitment.captured`, `question.captured` or `claim.captured`, it was extracted (a source
+   listed only with `document.referenced` was tagged, not extracted). Then
+   read those items with `timeline` (each event names its source) and build the draft in step 4
+   from them, so the tasks match the cards. If nothing turns up, ask the person whether the
+   meeting was already processed.
+3. **Build one episode** following the episode schema (when the transcript was already
+   extracted, only the items the person completes under "Doplňte prosím" in step 4 become one):
+   `decision` only for what was explicitly agreed (decided_by: the Wisemusic person, or the act or partner by role); `commitment` only with
    the owner and the due date that were said, turning relative dates ("do středy") into dates from
    the meeting date; `question` for everything that stayed open, an agreed piece of work without an
    owner or a date included; `claim` for facts with as_of = the meeting date. Each item quotes its
@@ -52,8 +63,10 @@ never becomes a task.
      wait; do not suggest a name or a date. What the person fills in moves to the tasks; what they
      leave moves to the open questions.
    - "Otevřené otázky (nerozhodnuto)": what was discussed but not decided. Never a task.
-   Ask what to drop or correct; then store the episode with `capture`. If it is refused, fix only
-   what the error names and try once more.
+   Ask what to drop or correct; then store the episode with `capture`. If the routine already
+   extracted the transcript, capture only the commitments the person completed under "Doplňte
+   prosím": a second episode would put the same decisions on the cards twice, worded
+   differently. If it is refused, fix only what the error names and try once more.
 5. **Duplicates.** Compare each confirmed task with the open tasks from step 2: the same person and
    the same work is the same commitment, also when it is worded differently or came from a mail or
    an earlier meeting. Then do not create a second task: if the existing one is in Todoist
@@ -70,8 +83,10 @@ never becomes a task.
      the mail in Outlook), note = the agreed words in short, without personal data;
    - the links: booking_id, release_id, campaign_id, product_id and artist_id. They choose the
      Todoist project (the release's, else the act's, else the team's).
-   A person approves their own task in the approval portal; a task for someone else is approved by
-   that person or a colleague. If the approval fails with "already has this task open", go back to
+   Then follow the `you_can_confirm` and `next` that `propose_action` returns: when you may
+   confirm, it is only because the person proposing is the task's owner, and only after their yes
+   in this conversation (`decide_action`); otherwise the task waits in the owner's or a
+   colleague's Claude (`my_approvals`, "co čeká na mé schválení?"). If the approval fails with "already has this task open", go back to
    step 5; with "not a member of the Todoist project", ask whoever runs that project to share it with
    the owner; with "has no Todoist user", tell the owner that the mapping
    (`sources/todoist.yaml`) is missing them.
