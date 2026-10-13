@@ -32,14 +32,14 @@ Kdo používá Claude Code přihlášený účtem claude.ai, dostane plugin i ta
 
 ## Claude Code bez přihlášení přes claude.ai (volitelné)
 
-Jeden člověk ho nainstaluje příkazem `/plugin install wisemusic-os --marketplace OWNER/REPOSITORY` (Claude Code
+Jeden člověk ho nainstaluje příkazem `/plugin install wisemusic-os --marketplace jstudnic1/wisemusic-claude-plugins` (Claude Code
 2.1.275 nebo novější). Pro všechny počítače přidejte tohle do spravovaného nastavení (**Organization
 settings > Claude Code > Managed settings**). Každý počítač pak potřebuje přístup ke čtení repozitáře.
 
 ```json
 {
   "extraKnownMarketplaces": {
-    "wisemusic": { "source": { "source": "github", "repo": "OWNER/REPOSITORY" }, "autoUpdate": true }
+    "wisemusic": { "source": { "source": "github", "repo": "jstudnic1/wisemusic-claude-plugins" }, "autoUpdate": true }
   },
   "enabledPlugins": { "wisemusic-os@wisemusic": true }
 }
