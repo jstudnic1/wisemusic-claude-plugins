@@ -1,5 +1,6 @@
 {
   "name": "wisemusic-os",
+  "displayName": "Wisemusic OS",
   "description": "Firemní konektor Wisemusic (Company OS) a dovednosti týmu: zeptejte se, co se děje s čímkoli ve firmě Wisemusic, se zdroji, a navrhujte změny, které schválí člověk.",
   "author": {
     "name": "Wisemusic"

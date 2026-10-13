@@ -16,3 +16,10 @@ do Coworku a do Claude Code.
 Konektor posílá vaše dotazy a volání nástrojů, která Claude dělá, na vlastní bránu Wisemusic na mcp.wisemusic.vono.studio,
 přihlášený jako vy. Každé volání se ověří podle vaší role a zapíše do auditního logu firmy. Plugin sám
 nic neukládá a neobsahuje žádné klíče ani hesla.
+
+## Instalace
+
+* Claude Code: `/plugin install wisemusic-os --marketplace jstudnic1/wisemusic-claude-plugins`
+* claude.ai a Cowork: **Customize > Plugins > Add > Add marketplace** s adresou `https://github.com/jstudnic1/wisemusic-claude-plugins`,
+  pak nainstalujte wisemusic-os a připojte ho na záložce **Connectors**. Vlastník organizace ho může přidat všem
+  v **Organization settings > Plugins & skills**.
